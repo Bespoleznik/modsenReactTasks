@@ -1,0 +1,21 @@
+import React, { useState } from 'react';
+
+const SimpleForm = () => {
+  const [text, setText] = useState('');
+
+  return (
+    <form onSubmit={(e) => {
+      e.preventDefault();
+      console.log(text);
+    }}>
+      <input 
+        value={text} 
+        onChange={(e) => setText(e.target.value)}
+        placeholder="Введите что-нибудь"
+      />
+      <button type="submit">Вывести в консоль</button>
+    </form>
+  );
+};
+
+export default SimpleForm;
