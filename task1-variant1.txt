@@ -1,39 +1,28 @@
 import React from 'react';
 
-interface Photo {
-  albumId: number;
-  id: number;
-  title: string;
-  url: string;
-  thumbnailUrl: string;
-}
-
-const photos: Photo[] = [
+const photos = [
   {
-    "albumId": 1,
-    "id": 1,
-    "title": "green",
-    "url": "https://via.placeholder.com/600/92c952",
-    "thumbnailUrl": "https://via.placeholder.com/150/92c952"
+    albumId: 1,
+    id: 1,
+    title: "green",
+    url: "https://via.placeholder.com/600/92c952",
+    thumbnailUrl: "https://via.placeholder.com/150/92c952"
   },
   {
-    "albumId": 1,
-    "id": 2,
-    "title": "purple",
-    "url": "https://via.placeholder.com/600/771796",
-    "thumbnailUrl": "https://via.placeholder.com/150/771796"
+    albumId: 1,
+    id: 2,
+    title: "purple",
+    url: "https://via.placeholder.com/600/771796",
+    thumbnailUrl: "https://via.placeholder.com/150/771796"
   }
 ];
 
-const PhotoList: React.FC = () => {
+const PhotoList = () => {
   return (
     <div>
       {photos.map(photo => (
         <div key={photo.id}>
-          <img 
-            src={photo.thumbnailUrl} 
-            alt={photo.title}
-          />
+          <img src={photo.thumbnailUrl} alt={photo.title} />
           <p>{photo.title}</p>
         </div>
       ))}
